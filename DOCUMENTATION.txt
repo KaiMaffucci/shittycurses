@@ -1,0 +1,31 @@
+ --- DOCUMENTATION ---
+
+A "grid" is a two-dimensional array of characters.
+
+FUNCTIONS:
+clear():
+	clears the shell/terminal screen
+
+new_grid(xl, yl, initchar):
+	generates a fresh xl by yl grid of whatever character initchar is. initchar will default to a space if not given.
+
+print_grid(grid):
+	clears the shell screen, then prints grid onto the shell
+
+setchar(x, y, grid, new_char):
+	changes the individual character at (x, y) in grid to new_char
+
+getchar(x, y, grid):
+	returns the character stored at location x, y in grid
+
+get_grid_chunk(old_grid, x, y, xl, yl)
+	returns a new smaller grid that is a part of a larger grid. 
+	the new grid starts at x, y in old_grid and is xl long and yl high, going right and down. 
+
+draw_line(grid, x, y, direction, length, new_char)
+	draws a line, starting at point (x, y) that is length characters long of new_char
+
+Possible future functions:
+
+set_grid_chunk(x, y, grid, grid_chunk):
+	sets a given chunk of grid to grid_chunk at a given location.
