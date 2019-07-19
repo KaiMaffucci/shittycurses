@@ -6,11 +6,14 @@ FUNCTIONS:
 clear():
 	clears the shell/terminal screen
 
-new_grid(xl, yl, initchar):
+create_grid(xl, yl, initchar):
 	generates a fresh xl by yl grid of whatever character initchar is. initchar will default to a space if not given.
 
+create_grid_from_file(filename, ignore_newlines = True):
+	generates a grid by using the characters of the file as the values for each index in the grid.
+
 print_grid(grid):
-	clears the shell screen, then prints grid onto the shell
+	clears the shell screen (on default), then prints grid onto the shell
 
 setchar(x, y, grid, new_char):
 	changes the individual character at (x, y) in grid to new_char
