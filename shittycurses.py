@@ -2,9 +2,9 @@
 some functions designed to make using
 2D arrays (of chars) easier to manipulate
 as if they were a coordinate plane
-"""
 
-#TODO: look over some of these functions to make sure they can exploit how python works with lists
+it can be used in other ways if you want but this is why I made it
+"""
 
 #maybe, instead of a normal list object, we could make a new object that contians a list and has all of these functions as methods
 
@@ -36,7 +36,26 @@ def create_grid(xl, yl, initchar = " "):
 
     return grid
 
-# how about a create_grid_from_file function?
+#creates a fresh grid using a text file
+def create_grid_from_file(filename, ignore_newlines = True):
+
+    grid = []
+
+    try:
+        file = open(filename, "r")
+    except:
+        return grid
+    
+    filelines = file.readlines()
+
+    for line in filelines:
+        row = []
+        for char in line:
+            if char == '\n' and ignore_newlines == True: pass
+            else: row.append(char)
+        grid.append(row)
+    
+    return grid
 
 #prints the grid to the screen
 def print_grid(grid, should_clear = True):
