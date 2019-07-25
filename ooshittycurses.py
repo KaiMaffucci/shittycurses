@@ -1,11 +1,6 @@
 """
 a revision of the original shittycurses module to be more elegant
 using the power of OOP
-
-TODO: 
- - add methods to the nGrid and fGrid classes
-   so it is possible to do thing.method() instead of
-   thing.grid.method()
 """
 
 # for clear() function
@@ -20,19 +15,22 @@ class Grid:
     
     # prints out the grid on the terminal/shell
     def print(self, should_clear = True):
-
         if should_clear == True: clear()
-        
-        for i in range(len(self.array)):
+        for i in range(0, len(self.array)):
             grid_line_str = "".join(self.array[i])
             print(grid_line_str)
     
+    # simply returns whatever character is at (x, y)
+    def get_char(self, x, y):
+        return self.array[y][x]
+
     # changes a single character in the array
     def set_char(self, x, y, new_char):
         self.array[y][x] = new_char
 
     # draws a line in the array, changing multiple characters
     def draw_line(self, x, y, direction, length, new_char):
+
         if direction == "up":
             for i in range(length):
                 try:
@@ -59,12 +57,7 @@ class Grid:
                     pass
         else:
             pass
-    
-    # simply returns whatever character is at (x, y)
-    def get_char(self, x, y):
 
-        return self.array[y][x]
-    
     # may add grid_chunk() function some time if it is needed
 
 # class for grids not created by files
