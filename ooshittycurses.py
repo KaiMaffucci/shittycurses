@@ -29,6 +29,7 @@ class Grid:
         self.array[y][x] = new_char
 
     # draws a line in the array, changing multiple characters
+    # might add functionality for drawing diagnal lines at some point
     def draw_line(self, x, y, direction, length, new_char):
 
         if direction == "up":
